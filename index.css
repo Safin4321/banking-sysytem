@@ -1,0 +1,34 @@
+.log{
+    box-shadow: 10px 10px 40px grey;
+}
+.half{
+    width: 20%;
+    background-color: blue;
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+}
+.hal{
+    width: 20%;
+    background-color: yellow;
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+}
+.ha{
+    width: 20%;
+    background-color: magenta;
+    border-radius: 5px;
+    float: left;
+}
+#tran{
+    display: none;
+}
+.dep{
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 10px 10px 20px grey;
+    float: left;
+}

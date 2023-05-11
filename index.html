@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="log">
+    <h1 style="text-align: center;">Welcomr To Pioneer Bank</h1>
+        <h2>Login</h2>
+        <input type="text" placeholder="Email"> <br>
+        <input type="text" placeholder="Password"> <br>
+        <button id="btn" type="submit" style="background-color: green;">Enter</button>
+    </div>
+    <div id="tran">
+        <section>
+            <div class="half"> <h3>Deposite</h3><h1>$ <span id="dp">00</span></h1></div>
+            <div class="hal"><h3>withdraw</h3> <h1>$ <span id="wt">00</span></h1></div>
+            <div class="ha"><h3>Balance</h3> <h1>$ <span id="bal">00</span></h1></div>
+        </section>
+        <section>
+            <div class="dep"><h2>Deposite</h2>
+                <input id='dipin'type="text" placeholder="$amount you want to deposite">
+                <button id="depbtn" type="submit" style="background-color: green;">Deposite</button>
+            </div>
+            <div class="dep"><h2>Withdraw</h2>
+                <input id="witin" type="text" placeholder="$amount you want to withdraw">
+                <button id="witbtn" type="submit" style="background-color: green;">Withdraw</button></div>
+        </section>
+    </div>
+    <script>
+        const a=document.getElementById('btn')
+        a.addEventListener('click',()=>{
+           const b= document.getElementById('log')
+           const c=document.getElementById('tran')
+           b.style.display='none';
+           c.style.display='block'; 
+
+
+           const e=document.getElementById('depbtn')
+           e.addEventListener('click',()=>{
+            const f=document.getElementById('dipin').value;
+            const inputbalance=parseInt(f)
+            const already=document.getElementById('dp').innerText;
+            if(inputbalance >=0) 
+            {
+            const total=inputbalance+parseInt(already)
+            document.getElementById('dp').innerText=total;
+            const bal2=document.getElementById('bal').innerText;
+            const bal=parseInt(bal2)+inputbalance;
+            document.getElementById('bal').innerText=bal;
+        }
+        })
+
+
+            const g=document.getElementById('witbtn')
+            g.addEventListener('click',()=>{
+                const input= document.getElementById('witin').value
+                const inputwit=parseInt(input)
+                withdraw=document.getElementById('wt').innerText
+                const bal2=document.getElementById('bal').innerText;
+                const num=parseInt(bal2)
+                   if(num>0 && inputwit <=num)
+                    {
+                    remains=parseInt(withdraw)-inputwit
+                    document.getElementById('wt').innerText=remains
+                    const bal=parseInt(bal2)-inputwit;
+                    document.getElementById('bal').innerText=bal;
+                }
+                else{
+                    alert('Insufficient Balance')
+                }
+            })
+
+           
+        })
+        
+    </script>
+</body>
+</html>
